@@ -52,13 +52,36 @@
 import requests
 
 def access_active_program_data():
+    """
+    access_active_program_data
+
+    :return:
+    """
     pass
 
 def check_form_trigger(form_link):
+    """
+    check if a form trigger has been activated
+
+    :param form_link:
+    :return:
+    """
     pass
 
 def add_data_to_google_sheets(data, sheet_link):
+    '''
+    add data to google sheets
+
+    :param data:
+    :param sheet_link:
+    :return:
+    '''
     pass
 
 def check_all_forms():
+    """
+    check all forms
+
+    :return:
+    """
     pass
