@@ -10,7 +10,7 @@
 * Once a functioning build is attaiined merge to main from experimental
 
 ## Coding standards
-* please leave a javadoc style comment at the top of every function (look it up)
+* please leave a docstring comment at the top of every function """(*enter*)
 * Make use of multiple files where neccesary
 * Leave #TODO: explined, anywhere something is incomplete
 
