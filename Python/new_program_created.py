@@ -6,4 +6,4 @@
 #
 #***Data required***
 #-------------------
-# The URL of the creation form to check
+# The URL of the creation form's spreadsheet to check
