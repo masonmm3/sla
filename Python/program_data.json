@@ -12,7 +12,7 @@
             "etc":"value"
         }
     },
-    "sheet_links" : {
+    "form_links" : {
         "program_1":"form_url_1",
         "program_2":"form_url_2"
     }
