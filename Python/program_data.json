@@ -1,0 +1,19 @@
+{
+    "active_program_forms" : ["program_1", "program_2"],
+    "program_details": {
+        "program_1" : {
+            "title":"value", 
+            "description":"value",
+            "etc":"value"
+        },
+        "program_2" : {
+            "title":"value", 
+            "description":"value",
+            "etc":"value"
+        }
+    },
+    "form_links" : {
+        "program_1":"form_url_1",
+        "program_2":"form_url_2"
+    }
+}
