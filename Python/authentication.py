@@ -11,7 +11,6 @@ def authenticate_google_account(SCOPES):
     creds = None
     #If we already have a token, go ahead and use that
     if os.path.exists('token.pickle'): 
-        print("Token exists")
         with open('token.pickle', 'rb') as token:
             creds = pickle.load(token)
         if not creds.valid:
