@@ -50,8 +50,8 @@ def read_new_rows(spreadsheet_id):
     with open("creation_data.json", "r") as f:
         creation_data = json.load(f)
         latest_row = int(creation_data.get("latest_row"))
-        if latest_row <= 0:
-            latest_row = 1
+        if latest_row <= 1:
+            latest_row = 2
         
     #Set the range to any new rows and get the values from this range
     range_string = "A"+str(latest_row)+":D"
