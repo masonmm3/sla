@@ -3,18 +3,14 @@
     "programs": {
         "program_1" : {
             "details":{
-                "title":"value", 
-                "description":"value",
-                "etc":"value"
+                "title":"value"
             },
             "form_id":"f_id",
             "sheet_id":"s_id"
         },
         "program_2" : {
             "details":{
-                "title":"value", 
-                "description":"value",
-                "etc":"value"
+                "title":"value"
             },
             "form_id":"f_id",
             "sheet_id":"s_id" 
