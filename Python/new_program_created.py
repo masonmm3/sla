@@ -46,29 +46,22 @@ def get_range(spreadsheet_id, range_name):
         return error
     
 def read_new_rows(spreadsheet_id):
-    #Get the file containg latest_row and read the value off it
-    with open("creation_data.json", "r") as f:
-        creation_data = json.load(f)
-        latest_row = int(creation_data.get("latest_row"))
-        if latest_row <= 1:
-            latest_row = 2
-        
-    #Set the range to any new rows and get the values from this range
-    range_string = "A"+str(latest_row)+":D"
-    result = get_range(spreadsheet_id, range_string)
-    values = result.get("values", [])
+    '''
+    Checks for any new rows in the given spreadsheet and returns the values
+    TODO add code to update the completed/uncompleted field in the spreadsheet (Change to TRUE once it has been accessed). Consider having it as a seperate function to be called after the values have been used.
+    '''
 
-    #Get the number of rows just discovered and increase latest_row accordingly
-    num_rows = len(values)
-    latest_row += num_rows
-    
-    #Update the file containing latest_row
-    with open("creation_data.json", "w") as f:
-        creation_data["latest_row"] = latest_row
-        json.dump(creation_data, f, indent=4)
+    #Set the range to all rows and get the values from this range
+    range_string = "A2:E"
+    result = get_range(spreadsheet_id, range_string)
+    all_values = np.array(result.get("values", []))
+
+    #Filter out to new rows
+    completed_column = all_values[:, 0]
+    values = [all_values[index, 1:].tolist() for index, val in enumerate(completed_column) if val != 'TRUE']
 
     return values
 
 if __name__ == "__main__":
-  values = read_new_rows(CREATION_FORM_ID)
-  print(values)
+    values = read_new_rows(CREATION_FORM_ID)
+    print(values)
