@@ -1,7 +1,7 @@
-#Data Flow
+# Data Flow
 
-##Structure for automated form responses
+## Structure for automated form responses
 *In progress*
 
-##Structure for automated form creation
+## Structure for automated form creation
 *in progress*
