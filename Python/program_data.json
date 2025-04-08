@@ -1,19 +1,19 @@
 {
-    "active_program_forms" : ["program_1", "program_2"],
-    "program_details": {
+    "active_programs" : ["program_1", "program_2"],
+    "programs": {
         "program_1" : {
-            "title":"value", 
-            "description":"value",
-            "etc":"value"
+            "details":{
+                "title":"value"
+            },
+            "form_id":"f_id",
+            "sheet_id":"s_id"
         },
         "program_2" : {
-            "title":"value", 
-            "description":"value",
-            "etc":"value"
+            "details":{
+                "title":"value"
+            },
+            "form_id":"f_id",
+            "sheet_id":"s_id" 
         }
-    },
-    "sheet_links" : {
-        "program_1":"form_url_1",
-        "program_2":"form_url_2"
     }
 }
