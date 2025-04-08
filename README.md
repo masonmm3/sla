@@ -17,7 +17,16 @@
 # TODO:
 ## End of Spring 2025
 * Create TODO for spring
-* add python doc link to readme
+    - In progress
 * Start general documentation
-## End of Project
+    - In progress
+* Functioning google form creation prototype
+    - not started
+* Functioning form response to google sheets prototype
+    - Started/semi functional
+    - Entered testing stages
+* Leave in depth #TODO: comments in the code.
+    - whats documentation?
+# End of Project
 * Create TODO for project
+    - new people issue
