@@ -21,7 +21,7 @@ def call_google_apps_script(params):
     '''
     Attempts calling the google apps script file from WEB_APP_URL with the inputted parameters
     '''
-    creds = authenticate_google_account()
+    creds = authenticate_google_account(SCOPES)
 
     headers = {
         'Authorization': f'Bearer {creds.token}'
@@ -34,12 +34,18 @@ def call_google_apps_script(params):
     if response.status_code == 200:
         print("Google Apps Script executed successfully!")
         print(response.text)
+        return response.text
     else:
         print(f"Failed to execute script. Status code: {response.status_code}")
         print(response.text)
+        return None
 
 if __name__ == '__main__':
-    pass
     #My test call that successfully linked a form to a specific google sheet
     #params = {'function': 'linkFormToSheet', 'f_id': '17PoKFAum28Fd_WdggV5QUOUnJvcuMh_9U36MZcP2ncQ', 's_id': '1JQ6Qm55Ku-jQoNn9mDhxVUzCb8dE-Sk2oZ7x4hF1diI'}
     #call_google_apps_script(params)
+
+    #My test call that succesfully duplicated an old form to a new one (with theme, questions, description, everything)
+    #params = {'function':'duplicateForm', 'f_id':'19DiZMuiejDLgYUKLmP5sGO66BR7rhoiZrQ-_KjKLISI', 'title':'api_duplicated2'}
+    #call_google_apps_script(params)
+    pass
