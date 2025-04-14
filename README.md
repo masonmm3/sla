@@ -16,6 +16,8 @@
 
 # TODO:
 ## End of Spring 2025
+* Switch from using a .json to save program information to using a google spreadsheet.
+    - This will allow SLA to edit which programs are active and see the data themselves
 * Create TODO for spring
     - In progress
 * Start general documentation

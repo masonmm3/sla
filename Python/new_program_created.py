@@ -21,7 +21,11 @@ CREATION_FORM_ID = "1GCE8SIKYwvZ8YNni_V0cHsCPmJD9pfps2NY1AjdBOJg"
 SCOPES = ['https://www.googleapis.com/auth/drive', 'https://www.googleapis.com/auth/forms', 'https://www.googleapis.com/auth/spreadsheets']  
 #Permissions we request
 
-def get_range(spreadsheet_id, range_name):
+def perform_trigger():
+    values, indices = read_new_rows()
+    peform_actions(values, indices)
+
+def get_sheet_range(spreadsheet_id, range_name):
     '''
     Retrieves a range from any spreadsheet
     Returns a result which you can access values from with .get("values", [])
@@ -47,20 +51,35 @@ def get_range(spreadsheet_id, range_name):
     
 def read_new_rows(spreadsheet_id):
     '''
-    Checks for any new rows in the given spreadsheet and returns the values
-    TODO add code to update the completed/uncompleted field in the spreadsheet (Change to TRUE once it has been accessed). Consider having it as a seperate function to be called after the values have been used.
+    Checks for any new rows in the given spreadsheet and returns the values and the indexes in the gsheet of the new values
     '''
 
     #Set the range to all rows and get the values from this range
     range_string = "A2:E"
-    result = get_range(spreadsheet_id, range_string)
+    result = get_sheet_range(spreadsheet_id, range_string)
     all_values = np.array(result.get("values", []))
 
     #Filter out to new rows
     completed_column = all_values[:, 0]
     values = [all_values[index, 1:].tolist() for index, val in enumerate(completed_column) if val != 'TRUE']
+    index_list = [index for index, condition in enumerate(completed_column) if condition != 'TRUE']
 
-    return values
+    return values, index_list
+
+def peform_actions(values, indices):
+    '''
+    Takes in all rows and runs the new_row_action() function on each one
+    '''
+    pass
+
+def new_row_action(row_values, row_index):
+    '''
+    Peforms the standard action for a new row being added to a sheet.
+    The standard action is to make a new form, then link the new form to a new spreadsheet, and finally save both these values for future use.
+    Lastly, update the completed/uncompleted field in the spreadsheet row index to TRUE
+    '''
+    pass
+
 
 if __name__ == "__main__":
     values = read_new_rows(CREATION_FORM_ID)
