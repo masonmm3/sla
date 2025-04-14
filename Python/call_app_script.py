@@ -34,9 +34,11 @@ def call_google_apps_script(params):
     if response.status_code == 200:
         print("Google Apps Script executed successfully!")
         print(response.text)
+        return response.text
     else:
         print(f"Failed to execute script. Status code: {response.status_code}")
         print(response.text)
+        return None
 
 if __name__ == '__main__':
     #My test call that successfully linked a form to a specific google sheet

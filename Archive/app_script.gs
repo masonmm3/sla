@@ -8,7 +8,7 @@ function doGet(e) {
   if (functionName === "linkFormToSheet") {
     return linkFormToSheet(f_id, s_id);
   } else if (functionName === "linkFormToNewSheet") {
-    return linkFormToNewSheet(f_id);
+    return linkFormToNewSheet(f_id, title);
   } else if (functionName === "createNewForm"){
     return createNewForm();
   } else if (functionName === "duplicateForm") {
@@ -27,10 +27,10 @@ function linkFormToSheet(f_id, s_id) {
   Logger.log('Form ' + f_id + ' is now linked to: ' + s_id);
 }
 
-function linkFormToNewSheet(f_id) {
+function linkFormToNewSheet(f_id, title) {
   var form = FormApp.openById(f_id);
   
-  var newSheet = SpreadsheetApp.create('New Response Sheet');  // Create a new sheet
+  var newSheet = SpreadsheetApp.create(title);  // Create a new sheet
   var s_id = newSheet.getId();
   form.setDestination(FormApp.DestinationType.SPREADSHEET, s_id);
   
