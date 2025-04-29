@@ -19,9 +19,9 @@
 * Switch from using a .json to save program information to using a google spreadsheet.
     - This will allow SLA to edit which programs are active and see the data themselves
 * Create TODO for spring
-    - In progress
+    - DONE
 * Start general documentation
-    - In progress
+    - in progress
 * Functioning google form creation prototype
     - not started
 * Functioning form response to google sheets prototype
